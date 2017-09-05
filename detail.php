@@ -23,6 +23,11 @@ print "<pre>\n";
 # }
 
 while ($row = pg_fetch_assoc($result)) {
+
+  echo "é ê^<br>";
+  echo "<img src=https://www.komei.or.jp/members/member_img/" . $row['giin_cd__c'] . ".jpg";
+  echo "<hr>";
+
   echo $row['giin_cd__c'];
   echo "<br>";
   echo $row['name'];
