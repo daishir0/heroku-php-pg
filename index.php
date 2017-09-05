@@ -14,11 +14,22 @@ $pg_conn = pg_connect(pg_connection_string_from_database_url());
 $result = pg_query($pg_conn, "SELECT * FROM salesforce.tou_jinji__c");
 
 print "<pre>\n";
-if (!pg_num_rows($result)) {
-  print("Your connection is working, but your database is empty.\nFret not. This is expected for new apps.\n");
-} else {
-  print "Tables in your database:\n";
-  while ($row = pg_fetch_row($result)) { print("- $row[0]\n"); }
+
+# if (!pg_num_rows($result)) {
+#   print("Your connection is working, but your database is empty.\nFret not. This is expected for new apps.\n");
+# } else {
+#   print "Tables in your database:\n";
+#   while ($row = pg_fetch_row($result)) { print("- $row[0]\n"); }
+# }
+
+while ($row = pg_fetch_assoc($result)) {
+  echo $row['giin_cd__c'];
+  echo $row['name_kana__c'];
+  echo $row['name'];
+  echo $row['shikaku__c'];
+  echo $row['shokuseki__c'];
+  echo $row['syubetsu__c'];
 }
+
 print "\n";
 ?>
