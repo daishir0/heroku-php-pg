@@ -23,9 +23,9 @@ print "<pre>\n";
 # }
 
 while ($row = pg_fetch_assoc($result)) {
-  echo $row['giin_cd__c'];
-  echo $row['name_kana__c'];
+  echo "<a href=detail.php?giin_cd__c=" . $row['giin_cd__c'] . ">" . $row['giin_cd__c'] . "</a> ;
   echo $row['name'];
+  echo $row['name_kana__c'];
   echo $row['shikaku__c'];
   echo $row['shokuseki__c'];
   echo $row['syubetsu__c'];
