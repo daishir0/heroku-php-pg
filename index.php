@@ -26,6 +26,7 @@ while ($row = pg_fetch_assoc($result)) {
   echo "・<a href=detail.php?giin_cd__c=" . $row['giin_cd__c'] . ">" . $row['giin_cd__c'] . "</a>　" ;
   echo $row['name'];
   echo "<br>";
+  echo "added by hirashima<br>";
 }
 
 print "\n";

@@ -40,6 +40,7 @@ while ($row = pg_fetch_assoc($result)) {
   echo "<br>";
   echo $row['syubetsu__c'];
   echo "<br>";
+  echo "test<br>";
 }
 
 print "\n";
