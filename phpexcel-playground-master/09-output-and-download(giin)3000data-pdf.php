@@ -37,7 +37,7 @@ while ($i < 3001){
     $i++;
 }
 
-error_reporting(0);
+//error_reporting(0);
 
 header('Content-Type: application/pdf');
 header('Content-Disposition: attachment;filename="output.pdf"');
