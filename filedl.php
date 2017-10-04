@@ -1,3 +1,5 @@
+<?php
+
 // ファイルのパス
 $filepath = '/tmp/13-tcPDF.pdf';
  
