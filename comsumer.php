@@ -14,6 +14,7 @@ echo ' [*] Waiting for messages. To exit press CTRL+C', "\n";
 
 $callback = function($msg) {
   //global $client;
+  require '09-output-and-download(giin)3000data-pdf.php';
   var_dump(json_decode($msg->body));
   $body = json_decode($msg->body);
   //$val = $client->set($body->id, $body->body);

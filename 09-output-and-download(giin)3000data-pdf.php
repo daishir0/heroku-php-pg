@@ -39,9 +39,9 @@ while ($i < 3001){
 
 //error_reporting(0);
 
-header('Content-Type: application/pdf');
-header('Content-Disposition: attachment;filename="output.pdf"');
-header('Cache-Control: max-age=0');
+//header('Content-Type: application/pdf');
+//header('Content-Disposition: attachment;filename="output.pdf"');
+//header('Cache-Control: max-age=0');
 
 // mPDF
 PHPExcel_Settings::setPdfRenderer(
@@ -49,9 +49,10 @@ PHPExcel_Settings::setPdfRenderer(
     __DIR__ .'/vendor/mpdf/mpdf'
 );
 $writer = PHPExcel_IOFactory::createWriter($book, 'PDF');
+//$writer->save('output/13-tcPDF' . strval(ceil(microtime(true)*1000)) . '.pdf');
 //$writer->save('output/13-tcPDF.pdf');
 $writer->save('/tmp/13-tcPDF.pdf');
-$writer->save('php://output');
+//$writer->save('php://output');
 
 
 
