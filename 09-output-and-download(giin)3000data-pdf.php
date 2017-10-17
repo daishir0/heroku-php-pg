@@ -9,7 +9,8 @@
  * お使いのブラウザで http://localhost:9000 を開くとExcelがダウンロードできます
  */
 
-date_default_timezone_set('Asia/Tokyo');
+ ini_set('memory_limit', '1024M');
+ date_default_timezone_set('Asia/Tokyo');
 require __DIR__ . '/vendor/autoload.php';
 
 //サンプルカードをテンプレートとして指定してみる
