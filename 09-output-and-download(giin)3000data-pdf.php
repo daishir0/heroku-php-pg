@@ -58,6 +58,7 @@ try {
     //$writer->save('php://output');
 
     file_put_contents('/tmp/tmp.txt', 'test', FILE_APPEND | LOCK_EX);
+    require 'fileupload/ls.php';
 
 } catch (Exception $e) {
     echo 'Catchした例外: ',  $e->getMessage(), "\n";
