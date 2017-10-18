@@ -44,18 +44,22 @@ while ($i < 3001){
 //header('Content-Disposition: attachment;filename="output.pdf"');
 //header('Cache-Control: max-age=0');
 
-// mPDF
-PHPExcel_Settings::setPdfRenderer(
-    PHPExcel_Settings::PDF_RENDERER_MPDF,
-    __DIR__ .'/vendor/mpdf/mpdf'
-);
-$writer = PHPExcel_IOFactory::createWriter($book, 'PDF');
-//$writer->save('output/13-tcPDF' . strval(ceil(microtime(true)*1000)) . '.pdf');
-//$writer->save('output/13-tcPDF.pdf');
-$writer->save('/tmp/13-tcPDF.pdf');
-//$writer->save('php://output');
+//エラーを補足して出力する
+try {
+    // mPDF
+    PHPExcel_Settings::setPdfRenderer(
+        PHPExcel_Settings::PDF_RENDERER_MPDF,
+        __DIR__ .'/vendor/mpdf/mpdf'
+    );
+    $writer = PHPExcel_IOFactory::createWriter($book, 'PDF');
+    //$writer->save('output/13-tcPDF' . strval(ceil(microtime(true)*1000)) . '.pdf');
+    //$writer->save('output/13-tcPDF.pdf');
+    $writer->save('/tmp/13-tcPDF.pdf');
+    //$writer->save('php://output');
 
-
+} catch (Exception $e) {
+    echo 'Catchした例外: ',  $e->getMessage(), "\n";
+}
 
 
 /*
