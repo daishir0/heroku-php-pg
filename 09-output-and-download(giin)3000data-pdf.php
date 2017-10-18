@@ -57,6 +57,8 @@ try {
     $writer->save('/tmp/13-tcPDF.pdf');
     //$writer->save('php://output');
 
+    file_put_contents('/tmp/tmp.txt', 'test', FILE_APPEND | LOCK_EX);
+
 } catch (Exception $e) {
     echo 'Catchした例外: ',  $e->getMessage(), "\n";
 }
